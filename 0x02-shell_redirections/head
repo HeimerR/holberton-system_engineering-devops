@@ -1,0 +1,26 @@
+total 88
+-rw-rw-r-- 1 vagrant vagrant    0 Feb  1 19:35 head
+-rw-rw-r-- 1 vagrant vagrant    0 Feb  1 19:32 sed
+-rw-rw-r-- 1 vagrant vagrant    0 Feb  1 19:20 grep
+drwxrwxr-x 4 vagrant vagrant 4096 Feb  1 18:53 test
+-rwxrw-r-- 1 vagrant vagrant   23 Feb  1 17:47 10-no_more_js
+-rw-rw-r-- 1 vagrant vagrant   10 Feb  1 17:36 iacta
+-rwxrw-r-- 1 vagrant vagrant   35 Feb  1 17:35 9-duplicate_last_line
+-rwxrw-r-- 1 vagrant vagrant   36 Feb  1 17:32 8-cwd_state
+-rw-rw-r-- 1 vagrant vagrant 1365 Feb  1 17:31 ls_cwd_content
+-rwxrw-r-- 1 vagrant vagrant  102 Feb  1 17:27 7-file
+-rw-rw-r-- 1 vagrant vagrant   11 Feb  1 17:25 7-file~
+-rw-rw-r-- 1 vagrant vagrant   17 Feb  1 17:16 \*\\'"Holberton School"\'\\*$\?\*\*\*\*\*:)
+-rw-rw-r-- 1 vagrant vagrant   17 Feb  1 17:14 \*\\'"Holberton School"\'\\\*$\\?\\*\\*\\*\\*\\*:)
+-rw-rw-r-- 1 vagrant vagrant   17 Feb  1 17:12 \*\\'"Holberton School"\\'\\\*$\\?\\*\\*\\*\\*\\*:)
+-rw-rw-r-- 1 vagrant vagrant   17 Feb  1 17:10 \\*\\\'"Holberton School"\\'\\\*$\\?\\*\\*\\*\\*\\*:)
+-rw-rw-r-- 1 vagrant vagrant   17 Feb  1 16:22 \*\\"Holberton School"\\\\*$?*****:)
+-rw-rw-r-- 1 vagrant vagrant   17 Feb  1 16:06 \*\"Holberton School"\\*$?*****:)
+-rwxrw-r-- 1 vagrant vagrant   28 Feb  1 15:51 6-third_line
+-rwxrw-r-- 1 vagrant vagrant   28 Feb  1 15:32 5-firstlines
+-rwxrw-r-- 1 vagrant vagrant   29 Feb  1 15:30 4-lastlines
+-rwxrw-r-- 1 vagrant vagrant   39 Feb  1 15:28 3-twofiles
+-rwxrw-r-- 1 vagrant vagrant   28 Feb  1 15:26 2-hellofile
+-rwxrw-r-- 1 vagrant vagrant   28 Feb  1 14:58 1-confused_smiley
+-rwxrw-r-- 1 vagrant vagrant   32 Feb  1 14:47 0-hello_world
+-rw-rw-r-- 1 vagrant vagrant   24 Feb  1 14:44 README.md
