@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1tp| grep -v / | head 
+ls -1tp| grep -v / | head
