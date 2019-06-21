@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# displays Holberton School 10 times.
+i=1
+H="Holberton School"
+while [ $i -lt 11 ]
+do
+	
+	if [ $i = 4 ]
+	then
+		echo "bad luck"
+		elif [ $i = 8 ]
+		then
+			 echo "good luck"
+	else
+		echo "$H"
+	fi
+	let i++
+done

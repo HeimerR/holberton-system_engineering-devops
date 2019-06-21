@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# displays Holberton School 10 times.
+H="Holberton School"
+for _ in {1..10}
+do
+	echo "$H"
+
+done
