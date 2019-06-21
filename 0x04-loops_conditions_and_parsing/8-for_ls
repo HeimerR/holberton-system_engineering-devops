@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# The content of the current directory.
+L="$(ls)"
+for i in "$L"
+do
+	echo "$i" | cut -d "-" -f 2
+done

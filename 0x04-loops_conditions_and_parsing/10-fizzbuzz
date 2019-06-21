@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# displays Holberton School 10 times.
+F="Fizz"
+B="Buzz"
+FB="FizzBuzz"
+for i in {1..100}
+do
+	if [ $((($i % 3) + ($i % 5))) = 0 ]
+	then
+		echo "$FB"
+	elif [ $(($i % 3)) = 0 ]
+	then
+		echo "$F"
+	elif [ $(($i % 5)) = 0 ]
+	then
+		echo "$B"
+	else
+		echo "$i"
+	fi
+done

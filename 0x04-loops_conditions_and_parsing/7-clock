@@ -2,7 +2,7 @@
 # displays Holberton School 10 times.
 i=0
 j=1
-while [ $i -lt 12 ]
+while [ $i -lt 13 ]
 do
 	echo "Hour: $i"
 	while [ $j -lt 60 ]
@@ -10,5 +10,6 @@ do
 		echo "$j"
 		let j++
 	done
+	j=1
 	let i++
 done
