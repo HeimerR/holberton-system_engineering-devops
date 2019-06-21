@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# displays Holberton School 10 times.
+file=/etc/passwd
+while IFS= read -r line
+do
+	echo "$line" | cut -d ":" -f 1,3,6
+done < "$file"
