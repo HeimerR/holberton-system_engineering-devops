@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# displays Holberton School 10 times.
+file=apache-access.log
+awk '{print $1$9}' $file | sort | uniq -c | sort -nr | tr -d '\t'
