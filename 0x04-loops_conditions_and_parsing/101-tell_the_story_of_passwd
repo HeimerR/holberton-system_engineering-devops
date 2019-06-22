@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# displays Holberton School 10 times.
+file=/etc/passwd
+#IFS=$(echo -en "\n\b")
+while IFS= read -r line
+do
+	AUX2=$line
+	echo -n "The user "
+	AUX=$(echo "$AUX2" | cut -d ":" -f 1)
+	echo -n "$AUX"
+	echo -n " is part of the "
+	AUX=$(echo "$AUX2" | cut -d ":" -f 4)
+	echo -n "$AUX"
+	echo -n " gang, lives in "
+	AUX=$(echo "$AUX2" | cut -d ":" -f 6)
+	echo -n "$AUX"
+	echo -n " and rides "
+	AUX=$(echo "$AUX2" | cut -d ":" -f 7)
+	echo -n "$AUX"
+	echo -n ". "
+	AUX=$(echo "$AUX2" | cut -d ":" -f 3)
+	echo -n "$AUX"
+	echo -n "'s place is protected by the passcode "
+	AUX=$(echo "$AUX2" | cut -d ":" -f 2)
+	echo -n "$AUX"
+	echo -n ", more info about the user here: "
+	AUX=$(echo "$AUX2" | cut -d ":" -f 5)
+	echo "$AUX"
+done < "$file"
