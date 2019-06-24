@@ -17,7 +17,7 @@ int infinite_while(void)
  * main - creates 5 zombie processes
  * Return: no return
 **/
-void main(void)
+int main(void)
 {
 	pid_t zombie;
 	int i;
@@ -33,4 +33,6 @@ void main(void)
 			printf("Zombie process created, PID: %d\n", zombie);
 	}
 	infinite_while();
+	return (0);
 }
+
