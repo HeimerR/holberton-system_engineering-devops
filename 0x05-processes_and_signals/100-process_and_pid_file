@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#Creates the file /var/run/holbertonscript.pid containing its PID
+trap 'echo "I hate the kill command"' SIGTERM
+trap 'echo "Y U no love me?!"' SIGINT
+trap 'rm /var/run/holbertonscript.pid && exit' SIGQUIT SIGTERM
+pgrep -f 100-process_and_pid_file > touch /var/run/holbertonscript.pid
+while true; do
+	echo "To infinity and beyond"
+	sleep 2
+done
