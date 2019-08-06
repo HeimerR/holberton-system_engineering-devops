@@ -22,13 +22,13 @@ Host *
 #   ForwardX11Trusted yes
 #   RhostsRSAAuthentication no
 #   RSAAuthentication yes
-#   PasswordAuthentication yes
+    PasswordAuthentication no
 #   HostbasedAuthentication no
 #   GSSAPIAuthentication no
 #   GSSAPIDelegateCredentials no
 #   GSSAPIKeyExchange no
 #   GSSAPITrustDNS no
-    BatchMode yes
+#    BatchMode yes
 #   CheckHostIP yes
 #   AddressFamily any
 #   ConnectTimeout 0
