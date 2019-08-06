@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#configures a new Ubuntu machine nginx
+sudo apt-get update
+sudo apt-get install nginx -y
+sudo ufw allow 'Nginx HTTP'
+echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
+sudo systemctl restart nginx
+new_string="listen 80 default_server;\\nrewrite \^\/redirect_me\$ https:\/\/www\.youtube.com\/ permanent;"
+sudo sed -i "s/listen 80 default_server;/$new_string/" /etc/nginx/sites-enabled/default
+sudo systemctl reload nginx
