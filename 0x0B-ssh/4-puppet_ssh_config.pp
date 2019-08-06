@@ -3,7 +3,7 @@ file_line { 'BatchMode yes':
   ensure => present,
   path   => '/etc/ssh/ssh_config',
   line   => 'BatchMode yes',
-  match  => '^ BatchMode',
+  match  => '^BatchMode',
 }->
 file_line { 'IdentityFile':
   ensure => present,
