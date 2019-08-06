@@ -1,4 +1,7 @@
 #make changes to our configuration file
+file { '/etc/ssh/ssh_config':
+  ensure => present
+}->
 file_line { 'BatchMode yes':
   ensure => present,
   path   => '/etc/ssh/ssh_config',
