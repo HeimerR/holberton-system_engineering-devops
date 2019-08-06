@@ -2,11 +2,11 @@
 file { '/etc/ssh/ssh_config':
   ensure => present
 }->
-file_line { 'BatchMode yes':
+file_line { 'pass no':
   ensure => present,
   path   => '/etc/ssh/ssh_config',
-  line   => 'BatchMode yes',
-  match  => '^BatchMode',
+  line   => 'PasswordAuthentication no',
+  match  => '^PasswordAuthentication yes',
 }->
 file_line { 'IdentityFile':
   ensure => present,
