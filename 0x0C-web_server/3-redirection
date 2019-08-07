@@ -4,7 +4,6 @@ sudo apt-get update
 sudo apt-get install nginx -y
 sudo ufw allow 'Nginx HTTP'
 echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
-sudo systemctl restart nginx
-new_string="listen 80 default_server;\\nrewrite \^\/redirect_me\$ https:\/\/www\.youtube.com\/ permanent;"
+new_string="listen 80 default_server;\\n\\tlocation \/redirect_me {\\n\\t\\treturn 301 https:\/\/www.youtube.com\/;\\n\\t}\\n;"
 sudo sed -i "s/listen 80 default_server;/$new_string/" /etc/nginx/sites-enabled/default
-sudo systemctl reload nginx
+sudo service nginx start
