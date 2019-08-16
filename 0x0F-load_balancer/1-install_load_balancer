@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#configures a new Ubuntu machine nginx
+apt-get update
+apt-get install software-properties-common -y
+add-apt-repository ppa:vbernat/haproxy-1.7 -y
+apt-get update
+apt-get install haproxy=1.7.\* -y
+echo "frontend web-front
+        bind *:80
+        default_backend web-backend
+
+backend web-backend
+        balance roundrobin
+        server web1 35.227.47.184:80 check
+        server web2 35.190.188.208:80 check
+" | sudo tee -a /etc/haproxy/haproxy.cfg
+sudo service haproxy start
