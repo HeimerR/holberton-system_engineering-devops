@@ -1,6 +1,6 @@
 # custom http header response NGiNX
-exec {'run':
-  command => '/usr/sbin/service nginx stop',
+package {'nginx':
+  ensure => 'present',
 }
 -> file_line { 'http_header':
   path  => '/etc/nginx/nginx.conf',
@@ -9,5 +9,4 @@ exec {'run':
 }
 -> exec {'run2':
   command => '/usr/sbin/service nginx start',
-  returns => [0,1,2]
 }
