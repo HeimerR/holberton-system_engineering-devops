@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 # Fixes Ngnix server
-sudo sed -i "s/listen 8080 default_server;/listen 80 default_server;/" /etc/nginx/sites-enabled/default
-sudo sed -i '22d' /etc/nginx/sites-enabled/default
+sudo sed -i "s/8080/80/" /etc/nginx/sites-enabled/default
+sudo service nginx start
+kill "$(pgrep nginx | head -1)"
