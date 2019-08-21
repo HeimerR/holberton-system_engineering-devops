@@ -38,12 +38,12 @@ defaults
         errorfile 504 /etc/haproxy/errors/504.http
 
 frontend www-http
-        bind 34.73.83.127:80
+        bind *:80
         reqadd X-Forwarded-Proto:\ http
         default_backend web-backend
 
 frontend www-https
-        bind 34.73.83.127:443 ssl crt /etc/haproxy/ssl/www.heimer.tech.pem
+        bind *:443 ssl crt /etc/haproxy/ssl/www.heimer.tech.pem
         reqadd X-Forwarded-Proto:\ https
         default_backend web-backend
 
