@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2086
+# display information about subdomains.
+if [ $# -eq 1 ]
+then
+	sub_domains='www lb-01 web-01 web-02'
+else
+	sub_domains="$2"
+fi
+for sub in $sub_domains
+do
+	echo -n "The subdomain $sub"
+	dig "$sub.$1" | awk 'NR == 14 {printf " is a %s record and points to %s\n", $4, $5}'
+done
