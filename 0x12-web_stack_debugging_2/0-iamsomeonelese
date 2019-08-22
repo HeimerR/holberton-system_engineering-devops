@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 # he script should run the whoami command under the user passed as an argument
+if [ "$(cut -d: -f1 /etc/passwd | grep -c "$1")" -eq 0 ]
+then
+        adduser --disabled-password --gecos "" "$1" > /dev/null
+fi
 su - "$1" -c 'whoami'
