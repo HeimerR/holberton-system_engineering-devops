@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# fix server
+# improvment server
 pkill apache2
+chown -R nginx:nginx /etc/nginx/
 chmod 666 /etc/nginx/nginx.conf
-sed -i '1s/^/user nginx;/' /etc/nginx/nginx.conf
 sed -i "s/80/8080/" /etc/nginx/sites-enabled/default
 su - nginx -c 'service nginx start'
