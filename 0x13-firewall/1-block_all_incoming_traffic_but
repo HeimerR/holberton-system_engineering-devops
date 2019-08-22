@@ -1,6 +1,6 @@
 apt-get update
 apt-get install ufw -y
-sudo ufw allow ssh
-sudo ufw allow 443
-sudo ufw allow 80
+sudo ufw allow ssh/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 80/tcp
 sudo ufw enable
