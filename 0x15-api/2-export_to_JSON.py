@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 """  export data in the CSV format. """
-from sys import argv
 import json
 import requests
+from sys import argv
 
 
 if __name__ == '__main__':
     """ main code """
     params = {'userId': argv[1]}
     r_info = requests.get(
-        'https://jsonplaceholder.typicode.com/todos/',
+        'https://jsonplaceholder.typicode.com/todos',
         params=params)
     r_user = requests.get(
         'https://jsonplaceholder.typicode.com/users/{}'.format(argv[1]))

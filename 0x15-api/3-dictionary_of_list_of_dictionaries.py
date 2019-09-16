@@ -7,9 +7,9 @@ import requests
 if __name__ == '__main__':
     """ main code """
     r_info = requests.get(
-        'https://jsonplaceholder.typicode.com/todos/')
+        'https://jsonplaceholder.typicode.com/todos')
     r_users = requests.get(
-        'https://jsonplaceholder.typicode.com/users/')
+        'https://jsonplaceholder.typicode.com/users')
     data = {}
     """ print(r_info.json()) """
     for user in r_users.json():
