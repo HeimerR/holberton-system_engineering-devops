@@ -6,18 +6,21 @@ from sys import argv
 
 if __name__ == "__main__":
     """ main code """
-    params = {'userId': argv[1]}
     r_info = requests.get(
-        'https://jsonplaceholder.typicode.com/todos',
-        params=params)
-    r_user = requests.get(
-        'https://jsonplaceholder.typicode.com/users/{}'.format(argv[1]))
-    print('Employee {} is done with'.format(r_user.json().get('name')), end='')
+        'https://jsonplaceholder.typicode.com/todos').json()
+    r_users = requests.get(
+        'https://jsonplaceholder.typicode.com/users').json()
+    r_user_dict = list(
+        filter(
+            lambda elem: elem.get('id') == int(
+                argv[1]),
+            r_users))[0]
+    print('Employee {} is done with'.format(r_user_dict.get('name')), end='')
     r_info_filtered = list(
         filter(
             lambda elem: elem.get('userId') == int(
                 argv[1]),
-            r_info.json()))
+            r_info))
     DONE_TASKS = list(
         filter(
             lambda elem: elem.get('completed'),
