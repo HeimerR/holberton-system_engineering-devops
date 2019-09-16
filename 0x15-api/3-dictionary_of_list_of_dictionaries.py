@@ -1,9 +1,11 @@
 #!/usr/bin/python3
+"""  export data in the JSON format. for all users """
 import json
 import requests
 
 
 if __name__ == '__main__':
+    """ main code """
     r_info = requests.get(
         'https://jsonplaceholder.typicode.com/todos/')
     r_users = requests.get(
