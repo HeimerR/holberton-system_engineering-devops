@@ -1,27 +1,33 @@
 #!/usr/bin/python3
-"""getting info from an api"""
-import requests as r
+""" given employee ID, returns information about his/her TODO list progress """
+import requests
 from sys import argv
 
+
 if __name__ == "__main__":
-    """exectute req"""
-    todo_url = "https://jsonplaceholder.typicode.com/todos"
-    users_url = "https://jsonplaceholder.typicode.com/users"
-    todos = r.get(todo_url)
-    users = r.get(users_url)
-    done, total, tasks = 0, 0, []
-    for x in todos.json():
-        if x.get("userId") == int(argv[1]):
-            total += 1
-            if x.get("completed") is True:
-                done += 1
-                tasks.append(x.get("title"))
-    for y in users.json():
-        if y.get("id") == int(argv[1]):
-            user = y.get("name")
-
-    print("Employee {} is done with tasks({}/{}):"
-          .format(user, done, total))
-
-    for task in tasks:
-        print("\t {}".format(task))
+    """ main code """
+    r_info = requests.get(
+        "https://jsonplaceholder.typicode.com/todos").json()
+    r_users = requests.get(
+        "https://jsonplaceholder.typicode.com/users").json()
+    r_user_dict = list(
+        filter(
+            lambda elem: elem.get("id") == int(
+                argv[1]),
+            r_users))[0]
+    user = r_user_dict.get('name')
+    r_info_filtered = list(
+        filter(
+            lambda elem: elem.get('userId') == int(
+                argv[1]),
+            r_info))
+    done = list(
+        filter(
+            lambda elem: elem.get('completed'),
+            r_info_filtered))
+    num_task = len(done)
+    total_num_task = len(r_info_filtered)
+    print("Employee {} is done with ".format(user), end='')
+    print('tasks({}/{}):'.format(num_task, total_num_task))
+    for i in done:
+        print('\t {}'.format(i.get('title')))
