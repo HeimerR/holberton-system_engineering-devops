@@ -26,4 +26,4 @@ if __name__ == '__main__':
     TOTAL_NUMBER_OF_TASKS = len(r_info_filtered)
     print('tasks({}/{})'.format(NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS))
     for i in DONE_TASKS:
-        print('\t{}'.format(i.get('title')))
+        print('\t {}'.format(i.get('title')))
