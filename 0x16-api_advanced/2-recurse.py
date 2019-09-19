@@ -1,6 +1,6 @@
 #!usr/bin/python3
 """ queries the Reddit API and returns a list containing the titles
-    of all hot articles 
+    of all hot articles
 """
 import requests
 
@@ -15,10 +15,8 @@ def recurse(subreddit, hot_list=[], after="null"):
         return None
     else:
         posts = hot.json().get("data").get("children")
-        hot_list = hot_list + [post.get("data").get("title") for post in posts]
+        hot_list += [post.get("data").get("title") for post in posts]
         after = hot.json().get("data").get("after")
-        print(*hot_list, sep="\n")
-        if after != "null":
+        if after is not None:
                 recurse(subreddit, hot_list, after)
         return hot_list
-
