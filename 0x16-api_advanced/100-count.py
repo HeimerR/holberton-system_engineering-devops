@@ -25,9 +25,7 @@ def recurse(subreddit, hot_list=[], after="null"):
 def count_words(subreddit, word_list):
     """ prints number of word coincedence (titles) on a subreddit """
     hot_list = recurse(subreddit)
-    if hot_list is None:
-        print()
-    else:
+    if hot_list is not None:
         hot_str = " ".join(hot_list)
         hot_words = hot_str.split(" ")
         rst = {}
@@ -35,8 +33,6 @@ def count_words(subreddit, word_list):
             num = len(list(filter(lambda hot_w: hot_w == word, hot_words)))
             if num != 0:
                 rst[word] = num
-        if len(rst) == 0:
-            print()
-        else:
+        if len(rst) != 0:
             for k, v in sorted(rst.items(), key=lambda x: x[1], reverse=True):
                 print(k + ": " + str(v))
