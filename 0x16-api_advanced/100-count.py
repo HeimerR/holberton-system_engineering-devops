@@ -18,7 +18,7 @@ def count_words(subreddit, word_list, hot_list=[], init=0, after="null"):
         if init == 0:
             hot_str = " ".join(hot_list)
             hot_words = hot_str.split(" ")
-            word_list_low = list(set(word_list))
+            word_list_low = sorted(list(set(word_list)))
             rst = []
             for word in word_list_low:
                 num = len(
@@ -29,6 +29,6 @@ def count_words(subreddit, word_list, hot_list=[], init=0, after="null"):
                 if num != 0:
                     rst.append([word, num])
             if len(rst) != 0:
-                rst_sorted = sorted(rst, key=itemgetter(1, 0), reverse=True)
-                for i in rst_sorted:
+                r = sorted(rst, key=lambda x: (x[1]), reverse=True)
+                for i in r:
                     print(*i, sep=": ")
