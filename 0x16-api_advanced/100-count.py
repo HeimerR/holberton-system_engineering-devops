@@ -1,12 +1,9 @@
 #!/usr/bin/python3
-""" parses the title of all hot articles, and prints a sorted count
-    of given keywords
-"""
+""" simple comment"""
 import requests
 
 
 def recurse(subreddit, hot_list=[], after="null"):
-    """ returns a list of all hot posts given a subreddit """
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     agt = {"User-Agent": "linux:1:v1.1 (by /u/heimer_r)"}
     payload = {"limit": "100", "after": after}
@@ -23,7 +20,6 @@ def recurse(subreddit, hot_list=[], after="null"):
 
 
 def count_words(subreddit, word_list):
-    """ prints number of word coincedence (titles) on a subreddit """
     hot_list = recurse(subreddit)
     if hot_list is not None:
         hot_str = " ".join(hot_list)
