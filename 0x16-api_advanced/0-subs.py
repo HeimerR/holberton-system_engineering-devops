@@ -1,5 +1,5 @@
-#!usr/bin/python3
-""" queries the Reddit API and returns the number of subscribers """
+#!/usr/bin/python3
+""" calls Reddit API and returns the number of subscribers """
 import requests
 
 
