@@ -1,5 +1,5 @@
-#!usr/bin/python3
-""" queries the Reddit API and prints the titles of the first 10 hot posts """
+#!/usr/bin/python3
+""" calls the Reddit API and prints the titles of the first 10 hot posts """
 import requests
 
 
