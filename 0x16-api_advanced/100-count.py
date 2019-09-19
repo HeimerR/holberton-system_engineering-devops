@@ -17,17 +17,14 @@ def count_words(subreddit, word_list, hot_list=[], init=0, after="null"):
             count_words(subreddit, word_list, hot_list, 1, after)
         if init == 0:
             hot_str = " ".join(hot_list)
-            with open('./test', 'w+') as f:
-                f.write(hot_str)
-                f.close()
             hot_words = hot_str.split(" ")
-            word_list_low = list(set([w.lower() for w in word_list]))
+            word_list_low = list(set(word_list))
             rst = []
             for word in word_list_low:
                 num = len(
                     list(
                         filter(
-                            lambda hot_w: hot_w.lower() == word,
+                            lambda hot_w: hot_w.lower() == word.lower(),
                             hot_words)))
                 if num != 0:
                     rst.append([word, num])
