@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """ simple comment """
+from operator import itemgetter
 import requests
 
 
 def count_words(subreddit, word_list, hot_list=[], init=0, after="null"):
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    agt = {"User-Agent": "linux:1:v1.1 (by /u/heimer_r)"}
+    agt = {"User-Agent": "linux:1:v2.1 (by /u/heimer_r)"}
     payload = {"limit": "100", "after": after}
     hot = requests.get(url, headers=agt, params=payload, allow_redirects=False)
     if hot.status_code == 200:
@@ -17,12 +18,16 @@ def count_words(subreddit, word_list, hot_list=[], init=0, after="null"):
         if init == 0:
             hot_str = " ".join(hot_list)
             hot_words = hot_str.split(" ")
-            rst = {}
+            rst = []
             for word in word_list:
-                num = len(list(filter(lambda hot_w: hot_w == word, hot_words)))
+                num = len(
+                    list(
+                        filter(
+                            lambda hot_w: hot_w.lower() == word.lower(),
+                            hot_words)))
                 if num != 0:
-                    rst[word] = num
+                    rst.append([word, num])
             if len(rst) != 0:
-                for k, v in sorted(
-                        rst.items(), key=lambda x: x[1], reverse=True):
-                    print(k + ": " + str(v))
+                rst_sorted = sorted(rst, key=itemgetter(1, 0), reverse=True)
+                for i in rst_sorted:
+                    print(*i, sep=": ")
