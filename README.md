@@ -2,7 +2,7 @@
 
 Set of projects of system_engineering devops. Shell, Scripting, Networking, Web infrastructure.
 
-![alt text](https://github.com/HeimerR/holbertonschool-higher_level_programming/blob/master/higher%20level%20programming.jpg)
+![alt text](https://github.com/HeimerR/holberton-system_engineering-devops/blob/master/Devops.jpg)
 
 ### How it works
 
