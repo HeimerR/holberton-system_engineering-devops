@@ -1,2 +1,0 @@
-#!/bin/bash
-ls -1tp| grep -v / | head -11 | tail
