@@ -1,6 +1,8 @@
 -- Postmortem example --
 # Frank video meme generator Postmortem (incident #001)
 
+![alt text](https://github.com/HeimerR/holberton-system_engineering-devops/blob/master/0x19-postmortem/postmortem.jpg)
+
 ## Date
 
 2019-10-21
@@ -27,6 +29,8 @@ Estimated 1500 queries lost, no revenue impact.
 
 The load balancer went down due to a combination of exceptionally high load and a fan failure which end up overheating the server.
 
+![alt text](https://github.com/HeimerR/holberton-system_engineering-devops/blob/master/0x19-postmortem/meme-it-is-fine.jpg)
+
 ## Trigger
 
 A sudden increase in traffic when a user promotes the website on Reddit.
@@ -50,6 +54,7 @@ The monitor system installed on the servers sent an email.
 | 16:53 | Traffic to Frank video increases by 100x after post |
 | 16:54 | **OUTAGE BEGINS** -- the temperature in the load balancer increases so fast and some user cannot access to the website|
 | 16:55 | most of the users receive pager storm, `ManyHttp500s`  |
+![alt text](https://github.com/HeimerR/holberton-system_engineering-devops/blob/master/0x19-postmortem/500error.jpg)
 | 16:57 | All traffic to Frank video website is failing|
 | 17:01 | **INCIDENT BEGINS** the monitoring system sends an email |
 | 17:02 | The DevOps Abdel receives the email and starts the analysis and calls the other engineers|
